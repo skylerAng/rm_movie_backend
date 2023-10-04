@@ -1,15 +1,17 @@
-package main 
+package main
 
 import (
-	"net/http"
+	"movie_api/router"
+
+	"movie_api/handler"
+
 	"github.com/labstack/echo/v4"
 )
 
 func main() {
 	e := echo.New()
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!")
-	})
+	router.API_V1(e)
+	handler.Startup()
 	e.Logger.Fatal(e.Start(":1323"))
 }
 
