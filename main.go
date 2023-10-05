@@ -3,18 +3,15 @@ package main
 import (
 	"movie_api/router"
 
-	"movie_api/handler"
-
 	"github.com/labstack/echo/v4"
+	"os"
 )
 
 func main() {
+	// Define echo object
 	e := echo.New()
 	router.API_V1(e)
-	handler.Startup()
-	e.Logger.Fatal(e.Start(":1323"))
-}
 
-// func doAdd(num1 int, num2 int) (int, string) {
-// 	return num1 + num2, "ladad"
-// }
+	// Run ECHO 
+	e.Logger.Fatal(e.Start(os.Getenv("APP_PORT")))
+}
