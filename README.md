@@ -7,7 +7,7 @@ Revenue monster backend test api
 - [x] fix movie api checking
 - [x] return image as base64
 
-## How to intall and run
+## How to install and run
 1. Edit the env file at env/api.env to your specified env
 
 2. Run the following commands
