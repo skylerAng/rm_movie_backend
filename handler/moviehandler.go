@@ -21,7 +21,6 @@ import (
 	"movie_api/utils"
 )
 
-
 var movie_collection *mongo.Collection = database.GetCollection(database.DB, "movie")
 
 func SearchMovie(c echo.Context) error {

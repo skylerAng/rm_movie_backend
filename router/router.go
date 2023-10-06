@@ -2,7 +2,7 @@ package router
 
 import (
 	"movie_api/handler"
-
+	
 	"github.com/labstack/echo/v4"
 )
 
@@ -15,7 +15,7 @@ func API_V1(e *echo.Echo) {
 	group.GET("/list", handler.ListMovies)
 	group.GET("/search", handler.SearchMovie)
 
-	user_group := e.Group("user")
-	user_group.GET("/", handler.GetBase)
-	user_group.GET("/login", handler.Login)
+	user_group := e.Group("user_auth")
+	user_group.POST("/register", handler.RegisterUser)
+	user_group.POST("/login", handler.LoginUser)
 }
